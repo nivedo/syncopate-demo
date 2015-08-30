@@ -54,8 +54,8 @@
         <h1>Syncopate Demo</h1>
         <div class="data-wrapper">
             <div class="data-box">
-                <label>T1000 Temp</label>
-                <span id="t1000_temp">0</span>
+                <label>Num Threads</label>
+                <span id="num_threads">0</span>
             </div>
             <div class="data-box">
                 <label>T1000 Load</label>
@@ -71,7 +71,7 @@
 
             $(function() {
                 if (window["WebSocket"]) {
-                    conn = new WebSocket("ws://api.blub.io:32798/ws?series=testcluster.t1000_temp&series=testcluster.t1000_load&series=testcluster.aapl_price");
+                    conn = new WebSocket("ws://api.blub.io:32802/ws?series=testcluster.num_threads&series=testcluster.t1000_load&series=testcluster.aapl_price");
                     conn.onmessage = function(evt) {
                         console.log(evt.data)
                         parseData(evt.data);
