@@ -58,8 +58,8 @@
                 <span id="num_threads">0</span>
             </div>
             <div class="data-box">
-                <label>T1000 Load</label>
-                <span id="t1000_load">0</span>
+                <label>CPU usage</label>
+                <span id="cpu_usage">0</span>
             </div>
             <div class="data-box">
                 <label>AAPL Price</label>
@@ -71,7 +71,7 @@
 
             $(function() {
                 if (window["WebSocket"]) {
-                    conn = new WebSocket("ws://api.blub.io:32805/ws?series=testcluster.num_threads&series=testcluster.t1000_load&series=testcluster.aapl_price");
+                    conn = new WebSocket("ws://api.blub.io:32804/ws?series=testcluster.num_threads&series=testcluster.cpu_usage&series=testcluster.aapl_price");
                     conn.onmessage = function(evt) {
                         console.log(evt.data)
                         parseData(evt.data);
