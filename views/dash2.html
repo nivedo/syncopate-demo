@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="dash.css">
+        <script src="syncopate.js"></script>
+        <title>Syncopate Demo</title>
+    </head>
+    <body>
+        <h1>Syncopate Demo</h1>
+        <div class="data-wrapper">
+            <div class="data-box">
+                <label>Num Threads</label>
+                <span>{{ testcluster:num_threads }}</span>
+            </div>
+            <div class="data-box">
+                <label>CPU usage</label>
+                <span>{{ testcluster:cpu_usage }}</span>
+            </div>
+            <div class="data-box">
+                <label>AAPL Price</label>
+                <span>{{ testcluster:aapl_price }}</span>
+            </div>
+        </div>
+    </body>
+</html>

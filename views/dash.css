@@ -1,0 +1,44 @@
+body {
+    background-color: #3e454c;
+    color: #fff6e5;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+body h1 {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 200;
+}
+body .data-box {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 10px 20px;
+    float: left;
+    text-align: center;
+    border: 3px solid #59646e;
+    border-radius: 500px;
+}
+.data-box span {
+    font-size: 100px;
+    line-height: 300px;
+    vertical-align: middle;
+    color: #fff6e5;
+}
+.data-box label {
+    position: absolute;
+    bottom: 50px;
+    left: 35%;
+    font-weight: 200;
+    color: #ff7f66;
+}
+body .data-wrapper {
+    position: absolute;
+    top:200px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 1050px;
+    height: 600px;
+
+    margin: auto;
+}
