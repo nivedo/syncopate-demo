@@ -41,9 +41,16 @@ var Syncopate = Syncopate || (function(){
                 }
             }
         },
+        data : function() {
+            return liveData
+        },
+        callback : function() {
+            return
+        },
         run : function() {
             setInterval(function() {
                 Syncopate.update(liveData);
+                Syncopate.callback();
             }, 100);
         }
     };

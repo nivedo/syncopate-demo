@@ -1,0 +1,19 @@
+body {
+    color: #fff6e5;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #444;
+}
+
+body .canvas-wrapper {
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 100%;
+}
+body .canvas-wrapper canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 1200px;
+}
