@@ -4,7 +4,7 @@ var Syncopate = Syncopate || (function(){
     return {
         init : function(token) {
             regex=/\{\{\s*([^}\s-]+)\s*\}\}/;
-            wsurl="ws://api.blub.io:32815/ws?token=" + token;
+            wsurl="ws://api.blub.io:32819/ws?token=" + token;
             var elems = document.body.getElementsByTagName("*");
             for (var i = elems.length; i--;) {
                 content=elems[i].innerHTML;
