@@ -3,7 +3,7 @@ var Syncopate = Syncopate || (function(){
 
     return {
         init : function(token) {
-            regex=/\{\{\s*([^}\s-]+)\s*\}\}/;
+            regex=/\{\{\s*([^}\s]+)\s*\}\}/;
             wsurl="ws://api.blub.io:32819/ws?token=" + token;
             var elems = document.body.getElementsByTagName("*");
             for (var i = elems.length; i--;) {
