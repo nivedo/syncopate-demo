@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="dash.css">
+        <script src="syncopate.js"></script>
+        <title>Syncopate Demo</title>
+    </head>
+    <body>
+        <h1>Syncopate Top Demo</h1>
+        <div class="data-wrapper">
+            <div class="data-box">
+                <label>CPU user</label>
+                <span>This is the cpu usage {{ gchang-mbp.cpu_usage_user }}</span>
+            </div>
+            <div class="data-box">
+                <label>CPU system</label>
+                <span>{{ gchang-mbp.cpu_usage_sys }}</span>
+            </div>
+            <div class="data-box">
+                <label>Processes running</label>
+                <span>{{ gchang-mbp.processes_running }}</span>
+            </div>
+        </div>
+        <script>
+            Syncopate.init("7f5b81eea442");
+            Syncopate.run();
+        </script>
+    </body>
+</html>
