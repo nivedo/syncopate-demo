@@ -10,9 +10,10 @@ var Syncopate = Syncopate || (function(){
                 content=elems[i].innerHTML;
                 match=content.match(regex);
                 if(match) {
-                    elems[i].className = elems[i].className + " " + match[1];
+                    console.log(match)
                     wsurl=wsurl+"&series="+match[1];
-                    elems[i].textContent="";
+                    res=content.replace(match[0],"<i class=\"" + match[1] + "\"></i>");
+                    elems[i].innerHTML = res
                 }
             }
 
