@@ -12,7 +12,7 @@ var Syncopate = Syncopate || (function(){
                 if(match) {
                     console.log(match)
                     wsurl=wsurl+"&series="+match[1];
-                    res=content.replace(match[0],"<i class=\"" + match[1] + "\"></i>");
+                    res=content.replace(match[0],"<span class=\"syncopate-var " + match[1] + "\"></span>");
                     elems[i].innerHTML = res
                 }
             }
