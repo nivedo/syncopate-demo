@@ -9,13 +9,19 @@
     <body>
         <div class="data-wrapper">
             <div class="data-box">
-                <b>Num Threads:</b> {{ testgroup.num_threads }}
+                {{ testgroup.proc_total }}
             </div>
             <div class="data-box">
-                <b>CPU usage:</b> {{ testgroup.cpu_usage }}
+                {{ testgroup.proc_running }}
             </div>
             <div class="data-box">
-                <b>AAPL Price:</b> {{ testgroup.aapl_price }}
+                {{ testgroup.proc_sleeping }}
+            </div>
+            <div class="data-box">
+                {{ testgroup.proc_stuck }}
+            </div>
+            <div class="data-box">
+                {{ testgroup.num_threads }}
             </div>
         </div>
         <div class="canvas-wrapper">

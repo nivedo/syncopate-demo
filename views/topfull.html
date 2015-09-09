@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="syncopate.js"></script>
+        <title>Syncopate Demo</title>
+    </head>
+    <body>
+        <h1>Top Demo</h1>
+        <p>
+            Processes: 
+            {{ testgroup.proc_total }} total, {{ testgroup.proc_running }} running, 
+            {{ testgroup.proc_stuck }} stuck, 
+            {{ testgroup.proc_sleeping }} sleeping, 
+            {{ testgroup.num_threads }} threads
+        </p>
+        <p>
+            Load Avg: 
+            {{ testgroup.load_1 }}, 
+            {{ testgroup.load_2 }}, 
+            {{ testgroup.load_3 }}
+        </p>
+        <p>
+            CPU usage: 
+            {{ testgroup.cpu_usage_user }}% user, 
+            {{ testgroup.cpu_usage_sys }}% sys,
+            {{ testgroup.cpu_usage_idle }}% idle
+        </p>
+        <p>
+            SharedLibs:
+      {{ lib_resident }} resident,
+      {{ lib_data }} data,
+      {{ lib_linkedit}} linkedit.
+        </p>
+        <p>
+            MemRegions:
+      {{ mem_regions_total }} total,
+      {{ mem_regions_resident }} resident,
+      {{ mem_regions_private }} private,
+      {{ mem_regions_shared }} shared.
+        </p>
+        <p>
+            PhysMem:
+      {{ phys_used }} used ({{ phys_wired }} wired),
+      {{ phys_unused }} unused.
+        </p>
+        <p>
+            VM:
+      {{ vm_vsize }} vsize,
+      {{ vm_frame_vsize }} framework vsize,
+      {{ vm_swapins }} swapins,
+      {{ vm_swapouts }} swapouts.
+        </p>
+        <p>
+            Networks:
+      packets: {{ net_packets_in }} in,
+      {{ net_packets_out }} out.
+        </p>
+        <p>
+            Disks:
+      {{ disk_read }} read,
+      {{ disk_written }} written.
+        </p>
+        <script>
+            Syncopate.init("f351753b0ea4", "testgroup");
+            Syncopate.run();
+        </script>
+    </body>
+</html>

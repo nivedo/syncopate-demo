@@ -2,18 +2,26 @@ var Syncopate = Syncopate || (function(){
     var liveData = {}
 
     return {
-        init : function(token) {
-            regex=/\{\{\s*([^}\s]+)\s*\}\}/;
-            wsurl="ws://api.blub.io:32819/ws?token=" + token;
+        init : function(token, group) {
+            regex=/\{\{\s*([^}\s:]+)\s*\}\}/;
+            wsurl="ws://52.8.222.214:8080/ws?token=" + token;
             var elems = document.body.getElementsByTagName("*");
             for (var i = elems.length; i--;) {
                 content=elems[i].innerHTML;
                 match=content.match(regex);
-                if(match) {
+                while(match) {
                     console.log(match)
+                    if(group != undefined) {
+                        if(match[1].split('.').length < 2) {
+                            match[1] = group + "." + match[1]
+                        }
+                    }
                     wsurl=wsurl+"&series="+match[1];
                     res=content.replace(match[0],"<span class=\"syncopate-var " + match[1] + "\"></span>");
                     elems[i].innerHTML = res
+                    // Match rest of InnerHTML
+                    content=elems[i].innerHTML;
+                    match=content.match(regex);
                 }
             }
 
@@ -27,11 +35,8 @@ var Syncopate = Syncopate || (function(){
         parse : function(rawData) {
             data = JSON.parse(rawData);
             for(i = 0; i < data["Series"].length; i++) {
-                var id = data["Series"][i]["Key"]
-                var response = data["Series"][i]["Response"]
-                for (var key in response["Snapshot"]) {
-                    liveData[id] = response["Snapshot"][key];
-                }
+                var response = data["Series"][i];
+                liveData[response["k"]] = response["v"];
             }
         },
         update : function(data) {
