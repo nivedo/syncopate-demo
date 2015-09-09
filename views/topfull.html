@@ -66,6 +66,8 @@
               <td>Command</td>
               <td>%CPU</td>
               <td>Time</td>
+              <td>NumWQ</td>
+              <td>NumTH</td>
               <td>Mem</td>
               <td>User</td>
             </tr>
@@ -74,6 +76,8 @@
               <td>{{ command_0 }}</td>
               <td>{{ pct_cpu_0 }}</td>
               <td>{{ time_0 }}</td>
+              <td>{{ num_th_0 }}</td>
+              <td>{{ num_wq_0 }}</td>
               <td>{{ mem_0 }}</td>
               <td>{{ user_0 }}</td>
             </tr>
@@ -82,6 +86,8 @@
               <td>{{ command_1 }}</td>
               <td>{{ pct_cpu_1 }}</td>
               <td>{{ time_1 }}</td>
+              <td>{{ num_th_1 }}</td>
+              <td>{{ num_wq_1 }}</td>
               <td>{{ mem_1 }}</td>
               <td>{{ user_1 }}</td>
             </tr>
@@ -90,6 +96,8 @@
               <td>{{ command_2 }}</td>
               <td>{{ pct_cpu_2 }}</td>
               <td>{{ time_2 }}</td>
+              <td>{{ num_th_2 }}</td>
+              <td>{{ num_wq_2 }}</td>
               <td>{{ mem_2 }}</td>
               <td>{{ user_2 }}</td>
             </tr>
@@ -98,6 +106,8 @@
               <td>{{ command_3 }}</td>
               <td>{{ pct_cpu_3 }}</td>
               <td>{{ time_3 }}</td>
+              <td>{{ num_th_3 }}</td>
+              <td>{{ num_wq_3 }}</td>
               <td>{{ mem_3 }}</td>
               <td>{{ user_3 }}</td>
             </tr>
@@ -106,12 +116,14 @@
               <td>{{ command_4 }}</td>
               <td>{{ pct_cpu_4 }}</td>
               <td>{{ time_4 }}</td>
+              <td>{{ num_th_4 }}</td>
+              <td>{{ num_wq_4 }}</td>
               <td>{{ mem_4 }}</td>
               <td>{{ user_4 }}</td>
             </tr>
         </table>
         <script>
-            Syncopate.init("f351753b0ea4", "testgroup");
+            Syncopate.init("311419725", "testgroup");
             Syncopate.run();
         </script>
     </body>

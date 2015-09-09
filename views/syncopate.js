@@ -1,5 +1,6 @@
 var Syncopate = Syncopate || (function(){
-    var liveData = {}
+    var liveData = {};
+    var updElems = {};
 
     return {
         init : function(token, group) {
@@ -11,18 +12,25 @@ var Syncopate = Syncopate || (function(){
                 match=content.match(regex);
                 while(match) {
                     console.log(match)
+                    matchkey = match[1]
                     if(group != undefined) {
-                        if(match[1].split('.').length < 2) {
-                            match[1] = group + "." + match[1]
+                        if(matchkey.split('.').length < 2) {
+                            matchkey = group + "." + matchkey
                         }
                     }
-                    wsurl=wsurl+"&series="+match[1];
-                    res=content.replace(match[0],"<span class=\"syncopate-var " + match[1] + "\"></span>");
+                    updElems[matchkey] = {}
+                    wsurl=wsurl+"&series="+matchkey;
+                    res=content.replace(match[0],"<span class=\"syncopate-var " + matchkey + "\"></span>");
                     elems[i].innerHTML = res
                     // Match rest of InnerHTML
                     content=elems[i].innerHTML;
                     match=content.match(regex);
                 }
+            }
+
+            for (var key in updElems) {
+                var elems = document.getElementsByClassName(key);
+                updElems[key] = elems
             }
 
             if (window["WebSocket"]) {
@@ -40,8 +48,8 @@ var Syncopate = Syncopate || (function(){
             }
         },
         update : function(data) {
-            for (var key in data) {
-                var elems = document.getElementsByClassName(key);
+            for (var key in updElems) {
+                elems = updElems[key]
                 for (var i = elems.length; i--;) {
                     elems[i].textContent=data[key];
                 }
