@@ -60,6 +60,56 @@
       {{ disk_read }} read,
       {{ disk_written }} written.
         </p>
+        <table style="width:80%">
+            <tr style="font-weight:bold">
+              <td>PID</td>
+              <td>Command</td>
+              <td>%CPU</td>
+              <td>Time</td>
+              <td>Mem</td>
+              <td>User</td>
+            </tr>
+            <tr>
+              <td>{{ pid_0 }}</td>
+              <td>{{ command_0 }}</td>
+              <td>{{ pct_cpu_0 }}</td>
+              <td>{{ time_0 }}</td>
+              <td>{{ mem_0 }}</td>
+              <td>{{ user_0 }}</td>
+            </tr>
+            <tr>
+              <td>{{ pid_1 }}</td>
+              <td>{{ command_1 }}</td>
+              <td>{{ pct_cpu_1 }}</td>
+              <td>{{ time_1 }}</td>
+              <td>{{ mem_1 }}</td>
+              <td>{{ user_1 }}</td>
+            </tr>
+            <tr>
+              <td>{{ pid_2 }}</td>
+              <td>{{ command_2 }}</td>
+              <td>{{ pct_cpu_2 }}</td>
+              <td>{{ time_2 }}</td>
+              <td>{{ mem_2 }}</td>
+              <td>{{ user_2 }}</td>
+            </tr>
+            <tr>
+              <td>{{ pid_3 }}</td>
+              <td>{{ command_3 }}</td>
+              <td>{{ pct_cpu_3 }}</td>
+              <td>{{ time_3 }}</td>
+              <td>{{ mem_3 }}</td>
+              <td>{{ user_3 }}</td>
+            </tr>
+            <tr>
+              <td>{{ pid_4 }}</td>
+              <td>{{ command_4 }}</td>
+              <td>{{ pct_cpu_4 }}</td>
+              <td>{{ time_4 }}</td>
+              <td>{{ mem_4 }}</td>
+              <td>{{ user_4 }}</td>
+            </tr>
+        </table>
         <script>
             Syncopate.init("f351753b0ea4", "testgroup");
             Syncopate.run();
