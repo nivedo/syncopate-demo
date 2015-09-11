@@ -4,64 +4,64 @@
         <script src="syncopate.js"></script>
         <title>Syncopate Demo</title>
     </head>
-    <body>
-        <h1>Top Demo</h1>
+    <body style="font-family: Helvetica; color: #555; background-color: #fff; padding-left: 20px">
+        <h1 style="color: #34AADC">Top Demo</h1>
         <p>
-            Processes: 
+            <b>Processes:</b>
             {{ testgroup.proc_total }} total, {{ testgroup.proc_running }} running, 
             {{ testgroup.proc_stuck }} stuck, 
             {{ testgroup.proc_sleeping }} sleeping, 
             {{ testgroup.num_threads }} threads
         </p>
         <p>
-            Load Avg: 
+            <b>Load Avg: </b>
             {{ testgroup.load_1 }}, 
             {{ testgroup.load_2 }}, 
             {{ testgroup.load_3 }}
         </p>
         <p>
-            CPU usage: 
+            <b>CPU usage: </b>
             {{ testgroup.cpu_usage_user }}% user, 
             {{ testgroup.cpu_usage_sys }}% sys,
             {{ testgroup.cpu_usage_idle }}% idle
         </p>
         <p>
-            SharedLibs:
+            <b>SharedLibs:</b>
       {{ lib_resident }} resident,
       {{ lib_data }} data,
       {{ lib_linkedit}} linkedit.
         </p>
         <p>
-            MemRegions:
+            <b>MemRegions:</b>
       {{ mem_regions_total }} total,
       {{ mem_regions_resident }} resident,
       {{ mem_regions_private }} private,
       {{ mem_regions_shared }} shared.
         </p>
         <p>
-            PhysMem:
+            <b>PhysMem:</b>
       {{ phys_used }} used ({{ phys_wired }} wired),
       {{ phys_unused }} unused.
         </p>
         <p>
-            VM:
+            <b>VM:</b>
       {{ vm_vsize }} vsize,
       {{ vm_frame_vsize }} framework vsize,
       {{ vm_swapins }} swapins,
       {{ vm_swapouts }} swapouts.
         </p>
         <p>
-            Networks:
+            <b>Networks:</b>
       packets: {{ net_packets_in }} in,
       {{ net_packets_out }} out.
         </p>
         <p>
-            Disks:
+            <b>Disks:</b>
       {{ disk_read }} read,
       {{ disk_written }} written.
         </p>
-        <table style="width:80%">
-            <tr style="font-weight:bold">
+        <table style="width:80%; table-layout: fixed;">
+            <tr style="font-weight:bold; color: #34AADC; height: 40px;">
               <td>PID</td>
               <td>Command</td>
               <td>%CPU</td>

@@ -65,7 +65,7 @@ var Syncopate = Syncopate || (function(){
             setInterval(function() {
                 Syncopate.update(liveData);
                 Syncopate.callback();
-            }, 100);
+            }, 1000);
         }
     };
 }());
