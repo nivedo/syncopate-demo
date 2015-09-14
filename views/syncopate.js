@@ -1,11 +1,13 @@
 var Syncopate = Syncopate || (function(){
     var liveData = {};
     var updElems = {};
+    var initialized = false;
 
     return {
         init : function(token, group) {
             regex=/\{\{\s*([^}\s:]+)\s*\}\}/;
-            wsurl="ws://52.8.222.214:8080/ws?token=" + token;
+            //wsurl="ws://52.8.222.214:8080/ws?token=" + token;
+            wsurl="ws://45.33.39.21:8080/ws?token=" + token;
             var elems = document.body.getElementsByTagName("*");
             for (var i = elems.length; i--;) {
                 content=elems[i].innerHTML;
@@ -37,6 +39,10 @@ var Syncopate = Syncopate || (function(){
                 conn = new WebSocket(wsurl);
                 conn.onmessage = function(evt) {
                     Syncopate.parse(evt.data);
+                    if (!initialized) {
+                        initialized = true
+                        Syncopate.update(liveData);
+                    }
                 }
             }
         },

@@ -4,26 +4,26 @@
         <script src="syncopate.js"></script>
         <title>Syncopate Demo</title>
     </head>
-    <body style="font-family: Helvetica; color: #555; background-color: #fff; padding-left: 20px">
-        <h1 style="color: #34AADC">Top Demo</h1>
+    <body style="font-family: 'SF UI Text'; color: #555; background-color: #fff; padding-left: 1.8em">
+        <h1 style="color: #3085D6; font-weight:200; font-size: 2.8em; ">Top Demo</h1>
         <p>
             <b>Processes:</b>
-            {{ testgroup.proc_total }} total, {{ testgroup.proc_running }} running, 
-            {{ testgroup.proc_stuck }} stuck, 
-            {{ testgroup.proc_sleeping }} sleeping, 
-            {{ testgroup.num_threads }} threads
+            {{ proc_total }} total, {{ proc_running }} running, 
+            {{ proc_stuck }} stuck, 
+            {{ proc_sleeping }} sleeping, 
+            {{ num_threads }} threads
         </p>
         <p>
             <b>Load Avg: </b>
-            {{ testgroup.load_1 }}, 
-            {{ testgroup.load_2 }}, 
-            {{ testgroup.load_3 }}
+            {{ load_1 }}, 
+            {{ load_2 }}, 
+            {{ load_3 }}
         </p>
         <p>
             <b>CPU usage: </b>
-            {{ testgroup.cpu_usage_user }}% user, 
-            {{ testgroup.cpu_usage_sys }}% sys,
-            {{ testgroup.cpu_usage_idle }}% idle
+            {{ cpu_usage_user }}% user, 
+            {{ cpu_usage_sys }}% sys,
+            {{ cpu_usage_idle }}% idle
         </p>
         <p>
             <b>SharedLibs:</b>
@@ -61,7 +61,7 @@
       {{ disk_written }} written.
         </p>
         <table style="width:80%; table-layout: fixed;">
-            <tr style="font-weight:bold; color: #34AADC; height: 40px;">
+            <tr style="color: #3085D6; height: 40px;">
               <td>PID</td>
               <td>Command</td>
               <td>%CPU</td>
@@ -123,7 +123,7 @@
             </tr>
         </table>
         <script>
-            Syncopate.init("311419725", "testgroup");
+            Syncopate.init("1671030878", "jay_mbp");
             Syncopate.run();
         </script>
     </body>
