@@ -6,7 +6,7 @@ var Syncopate = Syncopate || (function(){
     return {
         init : function(token, group) {
             regex=/\{\{\s*([^}\s:]+)\s*\}\}/;
-            //wsurl="ws://52.8.222.214:8080/ws?token=" + token;
+            //wsurl="ws://localhost:8080/ws?token=" + token;
             wsurl="ws://45.33.39.21:8080/ws?token=" + token;
             var elems = document.body.getElementsByTagName("*");
             for (var i = elems.length; i--;) {
